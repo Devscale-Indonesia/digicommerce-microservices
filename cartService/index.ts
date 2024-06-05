@@ -1,7 +1,7 @@
 import express, { Router } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { orderRouter } from "./routes/order.router";
+// import { cartRouter } from "./routes/cart.router";
 
 dotenv.config();
 
@@ -12,6 +12,6 @@ const app = express();
 app.use(cors());
 
 // test route
-app.use("/", orderRouter => console.log("hai ini routes"));
+app.use("/", (res, req) => console.log("hai ini routes"));
 
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));

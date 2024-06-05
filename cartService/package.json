@@ -1,7 +1,6 @@
 {
-  "name": "shopping-cart",
+  "name": "cartservice",
   "version": "1.0.0",
-  "description": "#### Dev Guidelines",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
@@ -10,6 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
