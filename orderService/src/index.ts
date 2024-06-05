@@ -1,6 +1,11 @@
 import express from "express";
 
+import { orderRouter } from "./routers/orderRouter";
+
 const app = express();
+
+app.use("/orders", orderRouter);
+
 
 console.log("Hello");
 
