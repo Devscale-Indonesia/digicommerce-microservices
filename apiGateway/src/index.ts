@@ -2,6 +2,7 @@ import express from "express";
 import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
+const port = process.env.PORT || 5500;
 
 app.use(
   "/api/auth",
@@ -59,7 +60,6 @@ app.use(
   })
 );
 
-
-app.listen(5500, "0.0.0.0", () => {
+app.listen(port as number, "0.0.0.0", () => {
   console.log("Server running at http://localhost:5500");
 });
