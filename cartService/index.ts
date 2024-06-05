@@ -2,11 +2,21 @@ import express, { Router } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 // import { cartRouter } from "./routes/cart.router";
+// import { createProxyMiddleware } from "http-proxy-middleware";
+const PORT = 8005;
 
 dotenv.config();
 
-const PORT = 8005;
 const app = express();
+
+// app.use(
+//   "/api/products",
+//   createProxyMiddleware({
+//     target: "http://localhost:8003",
+//     changeOrigin: true,
+//   })
+// );
+
 
 // handling plugin
 app.use(cors());

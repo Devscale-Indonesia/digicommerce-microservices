@@ -1,7 +1,7 @@
 import express, { Router } from "express";
 import dotenv from "dotenv";
 // import cors from "cors";
-// import { orderRouter } from "./routes/order.router";
+import { cartRouter } from "./routes/cart.router";
 // import { createProxyMiddleware } from "http-proxy-middleware";
 
 dotenv.config();
@@ -20,6 +20,6 @@ const app = express();
 // })
 
 // test route
-app.use("/", orderRouter => console.log("hai ini routes"));
+app.get("/", (req, res) => res.json({ message: "Hello this is from  cartService" }));
 
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
