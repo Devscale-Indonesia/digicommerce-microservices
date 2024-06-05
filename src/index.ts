@@ -4,7 +4,7 @@ import cors from "cors"
 
 dotenv.config();
 
-const PORT = 3000;
+const PORT = 8005;
 const app = express();
 
 // handling plugin
