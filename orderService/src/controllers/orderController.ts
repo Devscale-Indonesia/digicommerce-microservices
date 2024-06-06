@@ -3,17 +3,19 @@ import { Order } from "../models/orderSchema";
 import { orderItem } from "../models/orderItemSchema";
 
 export const orderController = {
-  addPermissionToProduct: async (req: Request, res: Response) => {},
+  createDummyOrder: async (req: Request, res: Response) => {
+    const { user_id, total_amount, status } = req.body;
 
-  getOrderHistory: async (req: Request, res: Response) => {
-    const allOrderHistory = await Order.find();
-
-    return res.status(200).json({
-      message: "Successfully get all order history!",
-      data: allOrderHistory,
+    const createOrder = new Order({
+      user_id,
+      total_amount,
+      status,
+      created_at : new Date(),
+      updated_at : new Date(),
     });
 
-    // const allOrderHistory = await Order.find;
-    // return res.json(allOrderHistory);
+    const saved = await createOrder.save();
+
+    return res.json({ message: "good!", data: saved });
   },
 };

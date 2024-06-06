@@ -3,5 +3,4 @@ import { orderController } from "../controllers/orderController";
 
 export const orderRouter = express.Router();
 
-orderRouter.get("/", orderController.getOrderHistory);
-orderRouter.get("/", orderController.addPermissionToProduct);
+orderRouter.post("/", orderController.createDummyOrder);
